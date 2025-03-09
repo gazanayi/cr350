@@ -1,0 +1,53 @@
+
+services:
+  clientsyslog:
+    build: ./clientsyslog
+    container_name: clientsyslog
+    hostname: clientsyslog
+    networks:
+      netcr350:
+        ipv4_address: 10.0.0.4
+    cap_add:
+        - NET_ADMIN
+    ports:
+        - "22:22"
+        - "80:80"
+    restart: always
+    volumes:
+        - ./clientsyslog/site:/var/www/html
+
+
+  serversyslog:
+   build: ./serversyslog
+   container_name: serversyslog
+   hostname: serversyslog
+   networks: 
+      netcr350:
+        ipv4_address: 10.0.0.2
+   cap_add:
+        - NET_ADMIN
+   ports:
+    - "514:514"
+   restart: always
+   volumes:
+        - ./serversyslog/:/etc/serversyslog
+
+
+  testeursyslog:
+   build: ./testeursyslog
+   container_name: testeursyslog
+   hostname: testeursyslog
+   networks:
+      netcr350:
+        ipv4_address: 10.0.0.3
+   cap_add:
+        - NET_ADMIN
+   restart: always
+ 
+networks:
+ netcr350:
+  driver: bridge
+  ipam:
+    driver: default
+    config: 
+      - subnet: "10.0.0.0/29"
