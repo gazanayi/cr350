@@ -19,5 +19,5 @@ RUN chmod +x /service.sh
 #Exposer les ports 22 (SSH) et 80 (HTTP)
 EXPOSE 22 80
 
-# Point d'entrée pour l'exécution du script neo.sh
+# Point d'entrée pour l'exécution du script bash
 ENTRYPOINT [ "/bin/bash", "/service.sh" ]

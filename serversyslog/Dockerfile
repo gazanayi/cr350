@@ -15,5 +15,5 @@ RUN chmod +x /service.sh
 
 EXPOSE 514
 
-# Point d'entrée pour l'exécution du script neo.sh
+# Point d'entrée pour l'exécution du script bash
 ENTRYPOINT [ "/bin/bash", "/service.sh" ]
