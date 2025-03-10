@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 # Installation des packages nécessaires
 RUN apt update \
-&& apt install -y apt-utils vim iproute2 systemctl net-tools iputils-ping rsyslog nano openssh-client \
+&& apt install -y apt-utils vim iproute2 systemctl ufw net-tools iputils-ping rsyslog nano openssh-client \
 && apt install -y curl tcpdump \
 && apt clean 
 
