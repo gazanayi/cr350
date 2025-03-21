@@ -3,7 +3,7 @@ FROM ubuntu:latest
 # Installation des packages nécessaires
 
 RUN apt-get update -y \
-&& apt-get install -y apt-utils vim curl iproute2 systemctl net-tools iputils-ping rsyslog ufw fail2ban openssh-server nano apache2 \
+&& apt-get install -y apt-utils tcpdump vim curl iproute2 systemctl net-tools iputils-ping rsyslog ufw fail2ban openssh-server nano apache2 \
 && apt clean 
 
 # Copie des fichiers vers le conteneur

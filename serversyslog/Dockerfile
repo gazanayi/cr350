@@ -3,7 +3,7 @@ FROM ubuntu:latest
 # Installation des packages nécessaires
 
 RUN apt update \
-&& apt install -y apt-utils vim curl systemctl iproute2 net-tools iputils-ping openssh-server rsyslog ufw nano \
+&& apt install -y apt-utils tcpdump vim curl systemctl iproute2 net-tools iputils-ping openssh-server rsyslog ufw nano \
 && apt clean 
 
 # Copie des fichiers vers le conteneur
