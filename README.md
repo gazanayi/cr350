@@ -49,8 +49,8 @@ fail2ban-client unban IP
 fail2ban-client unban --all
 
 -------------------------------------------
-# Lancement et de la capture du réseau clientsyslog  et enregistrement sous le fichier websshcap.pcap.
-tcpdump -i ens33 -w websshcap.pcap
+# Lancement et de la capture du réseau clientsyslog 
+tcpdump -i eth0 -nn
 
 
 ## Commandes importantes:
